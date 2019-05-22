@@ -9,40 +9,22 @@ const { Content } = Layout;
 
 export default class Search extends Component {
   render() {
+    const { images } = this.props;
     return (
       <Content style={{ padding: '0 50px', marginTop: 64 }}>
         <div className="paper">
           <SearchBar />
-          <div className="paper">
-            <Row gutter={40} style={{ marginBottom: '48px' }}>
-              <Col className="gutter-row" span={6}>
-                <ImageResult />
-              </Col>
-              <Col className="gutter-row" span={6}>
-                <ImageResult />
-              </Col>
-              <Col className="gutter-row" span={6}>
-                <ImageResult />
-              </Col>
-              <Col className="gutter-row" span={6}>
-                <ImageResult />
-              </Col>
-            </Row>
-            <Row gutter={40} style={{ marginBottom: '40px' }}>
-              <Col className="gutter-row" span={6}>
-                <ImageResult />
-              </Col>
-              <Col className="gutter-row" span={6}>
-                <ImageResult />
-              </Col>
-              <Col className="gutter-row" span={6}>
-                <ImageResult />
-              </Col>
-              <Col className="gutter-row" span={6}>
-                <ImageResult />
-              </Col>
-            </Row>
-          </div>
+          {images.length > 0 && (
+            <div className="paper">
+              <Row gutter={40}>
+                {images.map((image, i) => (
+                  <Col className="gutter-row" xs={24} md={12} lg={6} key={i}>
+                    <ImageResult imageId={image.id} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          )}
         </div>
       </Content>
     );

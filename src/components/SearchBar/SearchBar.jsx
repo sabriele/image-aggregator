@@ -12,7 +12,7 @@ export default class SearchBar extends Component {
           size="large"
           allowClear
           onSearch={value => console.log(value)}
-          style={{ width: 800 }}
+          style={{ width: '50vw' }}
         />
       </div>
     );
