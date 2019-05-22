@@ -1,0 +1,10 @@
+.ant-row > div {
+  background: transparent;
+  border: 0;
+}
+
+.paper {
+  background: #fff;
+  margin-top: 16px;
+  padding: 36px;
+}
